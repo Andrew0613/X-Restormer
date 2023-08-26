@@ -1,0 +1,1 @@
+python xrestormer/test.py -opt options/test/001_xrestormer_sr.yml

@@ -318,7 +318,7 @@ class SR_Upsample(nn.Sequential):
         super(SR_Upsample, self).__init__(*m)
 
 ##########################################################################
-##---------- Restormer -----------------------
+
 @ARCH_REGISTRY.register()
 class XRestormer(nn.Module):
     def __init__(self,
