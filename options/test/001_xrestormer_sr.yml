@@ -1,5 +1,5 @@
-name: A02_Net_L_SR_bs32p256
-model_type: RestormerModel
+name: 001_xrestormer_sr
+model_type: XRestormerModel
 scale: 4
 num_gpu: 1
 manual_seed: 123
@@ -44,7 +44,7 @@ datasets:
       type: disk
 # network structures
 network_g:
-  type: Channel_HaloSpatialv22_OCAB
+  type: XRestormer
   inp_channels: 3
   out_channels: 3
   dim: 48
@@ -63,7 +63,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: experiments/099_HaloNetv22_SR_bs32ps256/models/net_g_latest.pth
+  pretrain_network_g: experiments/pretrained/sr_300k.pth
   strict_load_g: true
   resume_state: ~
 # validation settings
