@@ -1,10 +1,10 @@
 # flake8: noqa
 import os.path as osp
 
-import basicsrexamples.archs
-import basicsrexamples.data
-import basicsrexamples.losses
-import basicsrexamples.models
+import xrestormer.archs
+import xrestormer.data
+import xrestormer.losses
+import xrestormer.models
 from basicsr.train import train_pipeline
 
 if __name__ == '__main__':
