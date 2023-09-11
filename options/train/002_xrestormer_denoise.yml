@@ -47,7 +47,7 @@ datasets:
 
 # network structures
 network_g:
-  type: Channel_HaloSpatialv22_OCAB
+  type: XRestormer
   inp_channels: 3
   out_channels: 3
   dim: 48

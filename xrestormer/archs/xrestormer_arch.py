@@ -149,6 +149,7 @@ class FeedForward(nn.Module):
         x = self.project_out(x)
         return x
 
+
 ##########################################################################
 ## Multi-DConv Head Transposed Self-Attention (MDTA)
 class ChannelAttention(nn.Module):
@@ -340,7 +341,7 @@ class XRestormer(nn.Module):
     ):
 
         super(XRestormer, self).__init__()
-        print("Initializing Channel_HaloSpatialv22_OCAB")
+        print("Initializing XRestormer")
         self.scale = scale
 
         self.patch_embed = OverlapPatchEmbed(inp_channels, dim)
@@ -370,17 +371,13 @@ class XRestormer(nn.Module):
 
         self.refinement = nn.Sequential(*[TransformerBlock(dim=int(dim*2**1), window_size = window_size, overlap_ratio=overlap_ratio[0],  num_channel_heads=channel_heads[0], num_spatial_heads=spatial_heads[0], spatial_dim_head = spatial_dim_head, ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_refinement_blocks)])
 
-        #### For Dual-Pixel Defocus Deblurring Task ####
-        self.dual_pixel_task = dual_pixel_task
-        if self.dual_pixel_task:
-            self.skip_conv = nn.Conv2d(dim, int(dim*2**1), kernel_size=1, bias=bias)
-        ###########################
-
         self.output = nn.Conv2d(int(dim*2**1), out_channels, kernel_size=3, stride=1, padding=1, bias=bias)
 
     def forward(self, inp_img):
+
         if self.scale > 1:
             inp_img = F.interpolate(inp_img, scale_factor=self.scale, mode='bilinear', align_corners=False)
+
         inp_enc_level1 = self.patch_embed(inp_img)
         out_enc_level1 = self.encoder_level1(inp_enc_level1)
 
@@ -408,12 +405,6 @@ class XRestormer(nn.Module):
         out_dec_level1 = self.decoder_level1(inp_dec_level1)
 
         out_dec_level1 = self.refinement(out_dec_level1)
-
-        #### For Dual-Pixel Defocus Deblurring Task ####
-        if self.dual_pixel_task:
-            out_dec_level1 = out_dec_level1 + self.skip_conv(inp_enc_level1)
-            out_dec_level1 = self.output(out_dec_level1)
-        ###########################
         out_dec_level1 = self.output(out_dec_level1) + inp_img
 
         return out_dec_level1
@@ -423,7 +414,7 @@ if __name__ == "__main__":
         inp_channels=3,
         out_channels=3,
         dim = 48,
-        num_blocks = [2,3,3,4],
+        num_blocks = [2,4,4,4],
         num_refinement_blocks = 4,
         channel_heads= [1,1,1,1],
         spatial_heads= [1,2,4,8],
@@ -436,4 +427,4 @@ if __name__ == "__main__":
         )
 
     # torchstat
-    stat(model, (3, 256, 256))
+    stat(model, (3, 512, 512))

@@ -1,5 +1,5 @@
-name: A03_Net_L_Deraining_bs32p256_175k
-model_type: RestormerModel
+name: 004_xrestormer_derain
+model_type: XRestormerModel
 scale: 1
 num_gpu: 8
 manual_seed: 123
@@ -10,46 +10,46 @@ datasets:
   test_1:
     name: Test100
     type: PairedImageDataset
-    dataroot_gt: datasets/Derain/Test100/target
-    dataroot_lq: datasets/Derain/Test100/input
+    dataroot_gt: datasets/Deraining/test/Test100/target
+    dataroot_lq: datasets/Deraining/test/Test100/input
     io_backend:
       # type: lmdb
       type: disk
   test_2:
     name: Rain100H
     type: PairedImageDataset
-    dataroot_gt: datasets/Derain/Rain100H/target
-    dataroot_lq: datasets/Derain/Rain100H/input
+    dataroot_gt: datasets/Deraining/test/Rain100H/target
+    dataroot_lq: datasets/Deraining/test/Rain100H/input
     io_backend:
       # type: lmdb
       type: disk
   test_3:
     name: Rain100L
     type: PairedImageDataset
-    dataroot_gt: datasets/Derain/Rain100L/target
-    dataroot_lq: datasets/Derain/Rain100L/input
+    dataroot_gt: datasets/Deraining/test/Rain100L/target
+    dataroot_lq: datasets/Deraining/test/Rain100L/input
     io_backend:
       # type: lmdb
       type: disk
   test_4:
     name: test1200
     type: PairedImageDataset
-    dataroot_gt: datasets/Derain/Test1200/target
-    dataroot_lq: datasets/Derain/Test1200/input
+    dataroot_gt: datasets/Deraining/test/Test1200/target
+    dataroot_lq: datasets/Deraining/test/Test1200/input
     io_backend:
       # type: lmdb
       type: disk
   test_4:
     name: test2800
     type: PairedImageDataset
-    dataroot_gt: datasets/Derain/Test2800/target
-    dataroot_lq: datasets/Derain/Test2800/input
+    dataroot_gt: datasets/Deraining/test/Test2800/target
+    dataroot_lq: datasets/Deraining/test/Test2800/input
     io_backend:
       # type: lmdb
       type: disk
 # network structures
 network_g:
-  type: Channel_HaloSpatialv22_OCAB
+  type: XRestormer
   inp_channels: 3
   out_channels: 3
   dim: 48
@@ -68,7 +68,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: experiments/pretrained/backbone/derain/net_g_175000.pth
+  pretrain_network_g: experiments/pretrained/derain_155k.pth
   strict_load_g: true
   resume_state: ~
 # validation settings

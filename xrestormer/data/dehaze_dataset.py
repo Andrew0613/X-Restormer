@@ -21,6 +21,7 @@ import numpy as np
 import torch
 import cv2
 from basicsr.utils.registry import DATASET_REGISTRY
+
 def padding(img_lq, img_gt, gt_size):
     h, w, _ = img_lq.shape
 

@@ -1,5 +1,5 @@
-name: A01_Net_L_MotionBlur_bs32p256
-model_type: RestormerModel
+name: 003_xrestormer_deblur
+model_type: XRestormerModel
 scale: 1
 num_gpu: 8
 manual_seed: 123
@@ -41,7 +41,7 @@ datasets:
       type: disk
 # network structures
 network_g:
-  type: Channel_HaloSpatialv22_OCAB
+  type: XRestormer
   inp_channels: 3
   out_channels: 3
   dim: 48
@@ -60,7 +60,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: experiments/098_HaloNetv22_Deblur_bs32ps256/models/net_g_latest.pth
+  pretrain_network_g: experiments/pretrained/deblur_300k.pth
   strict_load_g: true
   resume_state: ~
 # validation settings

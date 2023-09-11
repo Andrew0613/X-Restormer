@@ -1,7 +1,7 @@
 # general settings
-name: xrestormer_deblur
-model_type: RestormerModel
-scale: 1
+name: 001_xrestormer_s_sr
+model_type: XRestormerModel
+scale: 4
 num_gpu: 8
 manual_seed: 123
 padding_size: 16
@@ -9,10 +9,10 @@ padding_size: 16
 # dataset and data loader settings
 datasets:
   train:
-    name: GoPro
+    name: DF2K
     type: PairedImageDataset
-    dataroot_gt: /cpfs01/user/puyuandong/datasets/Motion_Deblur/train/GoPro/sharp_crops.lmdb
-    dataroot_lq: /cpfs01/user/puyuandong/datasets/Motion_Deblur/train/GoPro/blur_crops.lmdb
+    dataroot_gt: /cpfs01/user/puyuandong/datasets/classicSR/DF2K_train_HR_sub.lmdb
+    dataroot_lq: /cpfs01/user/puyuandong/datasets/classicSR/DF2K_train_LR_bicubic_X4_sub.lmdb
     filename_tmpl: '{}'
     io_backend:
       type: lmdb
@@ -30,12 +30,25 @@ datasets:
 
     gt_size: 256
 
-
   val_1:
-    name: GoPro
+    name: Set5
     type: PairedImageDataset
-    dataroot_gt: /cpfs01/user/puyuandong/datasets/Motion_Deblur/val/GoPro/target_crops
-    dataroot_lq: /cpfs01/user/puyuandong/datasets/Motion_Deblur/val/GoPro/input_crops
+    dataroot_gt: /cpfs01/user/puyuandong/datasets/classicSR/Set5/GTmod4
+    dataroot_lq: /cpfs01/user/puyuandong/datasets/classicSR/Set5/LRbicx4
+    io_backend:
+      type: disk
+  val_2:
+    name: Set14
+    type: PairedImageDataset
+    dataroot_gt: /cpfs01/user/puyuandong/datasets/classicSR/Set14/GTmod4
+    dataroot_lq: /cpfs01/user/puyuandong/datasets/classicSR/Set14/LRbicx4
+    io_backend:
+      type: disk
+  val_3:
+    name: Urban100
+    type: PairedImageDataset
+    dataroot_gt: /cpfs01/user/puyuandong/datasets/classicSR/Urban100/GTmod4
+    dataroot_lq: /cpfs01/user/puyuandong/datasets/classicSR/Urban100/LRbicx4
     io_backend:
       type: disk
 
@@ -45,23 +58,23 @@ network_g:
   type: XRestormer
   inp_channels: 3
   out_channels: 3
-  dim: 48
+  dim: 44
   num_blocks: [2,4,4,4]
   num_refinement_blocks: 4
   channel_heads: [1,2,4,8]
   spatial_heads: [1,2,4,8]
   overlap_ratio: [0.5,0.5,0.5,0.5]
   window_size: 8
-  spatial_dim_head: 16
+  spatial_dim_head: 20
   ffn_expansion_factor: 2.66
   bias: False
   LayerNorm_type: WithBias
   dual_pixel_task: False
-  scale: 1
+  scale: 4
 
 # path
 path:
-  pretrain_network_g: experiments/091_HaloNetv20_Deblur_bs32ps256/models/net_g_140000.pth
+  pretrain_network_g: ~
   strict_load_g: false
   resume_state: ~
 
@@ -101,13 +114,13 @@ val:
   metrics:
     psnr:
       type: calculate_psnr
-      crop_border: 0
-      test_y_channel: false
+      crop_border: 4
+      test_y_channel: true
       better: higher  # the higher, the better. Default: higher
     ssim:
       type: calculate_ssim
-      crop_border: 0
-      test_y_channel: false
+      crop_border: 4
+      test_y_channel: true
       better: higher  # the higher, the better. Default: higher
 
 # logging settings

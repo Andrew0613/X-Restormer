@@ -1,1 +1,1 @@
-python -m torch.distributed.launch --nproc_per_node=8 --master_port=1231 backbone/train.py -opt ./options/train/Backbone/A23_Net_Overlap_0_Deblur_bs16p192.yml --launcher pytorch --debug
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1231 xrestormer/train.py -opt ./options/train/001_xrestormer_s_sr.yml --launcher pytorch --debug
