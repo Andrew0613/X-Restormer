@@ -58,23 +58,23 @@
 ## Visual Comparison
 **Visual Comparison on SR.**
 
-<img src="figures/visual_sr.png" width="600"/>
+<img src="figures/visual_sr.png" width="800"/>
 
 **Visual Comparison on Denoising.**
 
-<img src="figures/visual_denoise.png" width="600"/>
+<img src="figures/visual_denoise.png" width="800"/>
 
 **Visual Comparison on Deblurring.**
 
-<img src="figures/visual_deblur.png" width="600"/>
+<img src="figures/visual_deblur.png" width="800"/>
 
 **Visual Comparison on Deraining.**
 
-<img src="figures/visual_derain.png" width="600"/>
+<img src="figures/visual_derain.png" width="800"/>
 
 **Visual Comparison on Dehazing.**
 
-<img src="figures/visual_dehaze.png" width="600"/>
+<img src="figures/visual_dehaze.png" width="800"/>
 
 ## Environment
 - [PyTorch == 1.13.0](https://pytorch.org/) **(Recommend **NOT** using torch 1.8!!! It would cause abnormal performance.)**
