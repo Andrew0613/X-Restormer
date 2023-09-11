@@ -40,11 +40,6 @@
 <!-- <img src="figures/Dehazing_SOTS.png" width="600"/> -->
 
 **Benchmark results on SRx4 without x2 pretraining. FLOPs are calculated for a 64x64 input.**
-<!-- | Model | Params(M) | Multi-Adds(G) | Set5 | Set14 | BSD100 | Urban100 | Manga109 |
-|-------|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [SwinIR](https://github.com/JingyunLiang/SwinIR) |   11.9    | 53.6 | 32.92 | 29.09 | 27.92 | 27.45 | 32.03 |
-| HAT-S |   9.6    | 54.9 | 32.92 | 29.15 | 27.97 | 27.87 | 32.35 |
-| HAT |   20.8    | 102.4 | 33.04 | 29.23 | 28.00 | 27.97 | 32.48 | -->
 
 |    Method   | Params(M) | FLOPs(G) |     Set5     |     Set14    |    BSD100    |   Urban100   |   Manga109   |
 |:-----------:|:---------:|:--------:|:------------:|:------------:|:------------:|:------------:|:------------:|
@@ -53,11 +48,6 @@
 | X-Restormer |    26.0   |   164.3  | 33.16/0.9058 | 29.17/0.7963 | 28.00/0.7512 | 27.66/0.8291 | 32.38/0.9279 |
 
 **Benchmark results on Deblurring. FLOPs are calculated for a 64x64 input.**
-<!-- | Model | Params(M) | Multi-Adds(G) | Set5 | Set14 | BSD100 | Urban100 | Manga109 |
-|-------|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [SwinIR](https://github.com/JingyunLiang/SwinIR) |   11.9    | 53.6 | 32.92 | 29.09 | 27.92 | 27.45 | 32.03 |
-| HAT-S |   9.6    | 54.9 | 32.92 | 29.15 | 27.97 | 27.87 | 32.35 |
-| HAT |   20.8    | 102.4 | 33.04 | 29.23 | 28.00 | 27.97 | 32.48 | -->
 
 |    Method   | Params(M) | FLOPs(G) |     GoPro    |     HIDE     |  RealBlur-R  |  RealBlur-J  |
 |:-----------:|:---------:|:--------:|:------------:|:------------:|:------------:|:------------:|
@@ -65,6 +55,21 @@
 |  Restormer  |    26.1   |   141.0  | 32.92/0.9398 | 31.22/0.9226 | 36.19/0.9571 | 28.96/0.8785 |
 | X-Restormer |    26.0   |   164.3  | 33.44/0.9459 | 31.76/0.9299 | 36.27/0.9581 | 28.87/0.8780 |
 
+## Visual Comparison
+**Visual Comparison on SR.**
+<img src="figures/visual_sr.png" width="600"/>
+
+**Visual Comparison on Denoising.**
+<img src="figures/visual_denoise.png" width="600"/>
+
+**Visual Comparison on Deblurring.**
+<img src="figures/visual_deblur.png" width="600"/>
+
+**Visual Comparison on Deraining.**
+<img src="figures/visual_derain.png" width="600"/>
+
+**Visual Comparison on Dehazing.**
+<img src="figures/visual_dehaze.png" width="600"/>
 
 ## Environment
 - [PyTorch == 1.13.0](https://pytorch.org/) **(Recommend **NOT** using torch 1.8!!! It would cause abnormal performance.)**
