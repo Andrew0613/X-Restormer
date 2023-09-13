@@ -1,7 +1,7 @@
 # X-Restormer [[Paper Link]](https://arxiv.org/abs/2205.04437) [![Replicate](https://replicate.com/cjwbw/hat/badge)](https://replicate.com/cjwbw/hat)
 
 ### A Comparative Study of Image Restoration Networks for General Backbone Network Design
-[Xiangyu Chen](https://chxy95.github.io/), [Zheyuan Li](https://xinntao.github.io/), [Yuandong Pu](https://andrew0613.github.io/), [Jiantao Zhou](https://www.fst.um.edu.mo/personal/jtzhou/), [Yu Qiao](https://mmlab.siat.ac.cn/yuqiao) and [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ&hl=zh-CN)
+[Xiangyu Chen*](https://chxy95.github.io/), [Zheyuan Li*](https://xinntao.github.io/), [Yuandong Pu*](https://andrew0613.github.io/), [Jiantao Zhou](https://www.fst.um.edu.mo/personal/jtzhou/), [Yu Qiao](https://mmlab.siat.ac.cn/yuqiao) and [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ&hl=zh-CN)
 
 #### BibTeX
 
