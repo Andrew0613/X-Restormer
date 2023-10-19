@@ -1,17 +1,15 @@
 # X-Restormer [[Paper Link]](https://arxiv.org/abs/2310.11881) 
 
 ### A Comparative Study of Image Restoration Networks for General Backbone Network Design
-[Xiangyu Chen*](https://chxy95.github.io/), [Zheyuan Li*](https://xiaom233.github.io/), [Yuandong Pu*](https://andrew0613.github.io/), [Jiantao Zhou](https://www.fst.um.edu.mo/personal/jtzhou/), [Yu Qiao](https://mmlab.siat.ac.cn/yuqiao) and [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ&hl=zh-CN)
+[Xiangyu Chen*](https://chxy95.github.io/), [Zheyuan Li*](https://xiaom233.github.io/), [Yuandong Pu*](https://andrew0613.github.io/),[Yihao Liu](https://scholar.google.com/citations?user=WRIYcNwAAAAJ&hl=zh-CN&oi=ao), [Jiantao Zhou](https://www.fst.um.edu.mo/personal/jtzhou/), [Yu Qiao](https://mmlab.siat.ac.cn/yuqiao) and [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ&hl=zh-CN)
 
 #### BibTeX
 
-    @misc{chen2023comparative,
+    @article{chen2023comparative,
       title={A Comparative Study of Image Restoration Networks for General Backbone Network Design}, 
-      author={Xiangyu Chen and Zheyuan Li and Yuandong Pu and Yihao Liu and Jiantao Zhou and Yu Qiao and Chao Dong},
+      author={Chen, Xiangyu and Li, Zheyuan and Pu, Yuandong and Liu,  Yihao and Zhou, Jiantao and Qiao, Yu and Dong, Chao},
+      journal={arXiv preprint arXiv:2310.11881},
       year={2023},
-      eprint={2310.11881},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
 }
 
 ## Updates
@@ -19,39 +17,11 @@
 - 2023-10-19: Release the codes, models and results.
 
 
-## Overview
+<!-- ## Overview
 <img src="figures/Structure.png" width="600"/>
-<img src="figures/relative_performance.jpg" width="600"/>
-<!-- <div style="display: flex; justify-content: center;">
-    <img src="figures/SR_Urban100.png" alt="图片1" style="width: 300px; margin: 10px;">
-    <img src="figures/Denoising_McMaster.png" alt="图片2" style="width: 300px; margin: 10px;">
-</div>
-<div style="display: flex; justify-content: center;">
-    <img src="figures/Deblurring_Gopro.png" alt="图片1" style="width: 300px; margin: 10px;">
-    <img src="figures/Deraining_test100.png" alt="图片2" style="width: 300px; margin: 10px;">
-</div>
-<div style="display: flex; justify-content: center;">
-    <img src="figures/Dehazing_SOTS.png" alt="图片2" style="width: 300px; margin: 10px;">
-</div> -->
-<!-- <img src="figures/Dehazing_SOTS.png" width="600"/> -->
+<img src="figures/relative_performance.jpg" width="600"/> -->
 
-**Benchmark results on SRx4 without x2 pretraining. FLOPs are calculated for a 64x64 input.**
-
-|    Method   | Params(M) | FLOPs(G) |     Set5     |     Set14    |    BSD100    |   Urban100   |   Manga109   |
-|:-----------:|:---------:|:--------:|:------------:|:------------:|:------------:|:------------:|:------------:|
-|    SwinIR   |    11.9   |   47.3   | 32.88/0.9041 | 29.07/0.7944 | 27.93/0.7490 | 27.47/0.8258 | 31.96/0.9255 |
-|  Restormer  |    26.1   |   141.0  | 32.94/0.9039 | 29.06/0.7934 | 27.91/0.7482 | 27.32/0.8199 | 31.96/0.9244 |
-| X-Restormer |    26.0   |   164.3  | 33.16/0.9058 | 29.17/0.7963 | 28.00/0.7512 | 27.66/0.8291 | 32.38/0.9279 |
-
-**Benchmark results on Deblurring. FLOPs are calculated for a 256x256 input.**
-
-|    Method   | Params(M) | FLOPs(G) |     GoPro    |     HIDE     |  RealBlur-R  |  RealBlur-J  |
-|:-----------:|:---------:|:--------:|:------------:|:------------:|:------------:|:------------:|
-|    SwinIR   |    11.9   |   752.1  | 31.66/0.9209 | 29.41/0.8957 | 35.49/0.9469 | 27.55/0.8403 |
-|  Restormer  |    26.1   |   141.0  | 32.92/0.9398 | 31.22/0.9226 | 36.19/0.9571 | 28.96/0.8785 |
-| X-Restormer |    26.0   |   164.3  | 33.44/0.9459 | 31.76/0.9299 | 36.27/0.9581 | 28.87/0.8780 |
-
-## Visual Comparison
+<!-- ## Visual Comparison
 **Visual Comparison on SR.**
 
 <img src="figures/visual_sr.png" width="800"/>
@@ -70,11 +40,11 @@
 
 **Visual Comparison on Dehazing.**
 
-<img src="figures/visual_dehaze.png" width="800"/>
+<img src="figures/visual_dehaze.png" width="800"/> -->
 
 ## Environment
 - [PyTorch == 1.13.0](https://pytorch.org/) **(Recommend **NOT** using torch 1.8!!! It would cause abnormal performance.)**
-- [BasicSR == 1.3.4.9](https://github.com/XPixelGroup/BasicSR/blob/master/INSTALL.md)
+- [BasicSR == 1.4.2](https://github.com/XPixelGroup/BasicSR/blob/master/INSTALL.md)
 ### Installation
 Install Pytorch first.
 Then,
@@ -88,9 +58,9 @@ python setup.py develop
 - Refer to `./options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.
 - The pretrained models are available at
 [Google Drive](https://drive.google.com/drive/folders/1HpmReFfoUqUbnAOQ7rvOeNU3uf_m69w0?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1OvyRe6u08HXFQI8NACOhdg?pwd=im3q) (access code: im3q).
-- Then run the follwing codes (taking `HAT_SRx4_ImageNet-pretrain.pth` as an example):
+- Then run the follwing codes (taking `sr_300k.pth` as an example):
 ```
-python hat/test.py -opt options/test/001_xrestormer_sr.yml
+python xrestormer/test.py -opt options/test/001_xrestormer_sr.yml
 ```
 The testing results will be saved in the `./results` folder.
 
