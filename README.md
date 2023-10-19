@@ -7,14 +7,14 @@
 
     @article{chen2023comparative,
       title={A Comparative Study of Image Restoration Networks for General Backbone Network Design}, 
-      author={Chen, Xiangyu and Li, Zheyuan and Pu, Yuandong and Liu,  Yihao and Zhou, Jiantao and Qiao, Yu and Dong, Chao},
+      author={Chen, Xiangyu and Li, Zheyuan and Pu, Yuandong and Liu, Yihao and Zhou, Jiantao and Qiao, Yu and Dong, Chao},
       journal={arXiv preprint arXiv:2310.11881},
-      year={2023},
-}
+      year={2023}
+    }
 
-## Updates
+<!--## Updates
 - 2023-10-18: Release the first version of the paper at Arxiv.
-- 2023-10-19: Release the codes, models and results.
+- 2023-10-19: Release the codes, models and results.-->
 
 
 <!-- ## Overview
@@ -43,8 +43,8 @@
 <img src="figures/visual_dehaze.png" width="800"/> -->
 
 ## Environment
-- [PyTorch == 1.13.0](https://pytorch.org/) **(Recommend **NOT** using torch 1.8!!! It would cause abnormal performance.)**
-- [BasicSR == 1.4.2](https://github.com/XPixelGroup/BasicSR/blob/master/INSTALL.md)
+- [PyTorch>=1.13.0](https://pytorch.org/) **(Recommend **NOT** using torch 1.8!)**
+- [BasicSR==1.4.2](https://github.com/XPixelGroup/BasicSR/blob/master/INSTALL.md)
 ### Installation
 Install Pytorch first.
 Then,
@@ -84,4 +84,4 @@ The inference results on benchmark datasets are available at
 
 
 ## Contact
-If you have any question, please email chxy95@gmail.com or join in the [Wechat group of BasicSR](https://github.com/XPixelGroup/BasicSR#-contact) to discuss with the authors.
+If you have any question, please contact puyuandong01061313@gmail.com or chxy95@gmail.com.
