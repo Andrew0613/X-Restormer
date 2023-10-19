@@ -57,7 +57,7 @@ python setup.py develop
 
 - Refer to `./options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.
 - The pretrained models are available at
-[Google Drive](https://drive.google.com/drive/folders/1HpmReFfoUqUbnAOQ7rvOeNU3uf_m69w0?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1OvyRe6u08HXFQI8NACOhdg?pwd=im3q) (access code: im3q).
+[Google Drive](https://drive.google.com/drive/folders/16WxegSAN_sescgrfW4ZMO4b6TcR_7T24?usp=share_link) or [Baidu Netdisk](https://pan.baidu.com/s/1OvyRe6u08HXFQI8NACOhdg?pwd=im3q) (access code: im3q).
 - Then run the follwing codes (taking `sr_300k.pth` as an example):
 ```
 python xrestormer/test.py -opt options/test/001_xrestormer_sr.yml
@@ -80,7 +80,7 @@ The training logs and weights will be saved in the `./experiments` folder.
 
 ## Results
 The inference results on benchmark datasets are available at
-[Google Drive](https://drive.google.com/drive/folders/1t2RdesqRVN7L6vCptneNRcpwZAo-Ub3L?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1LaTGD-x66-QvZ9WE0QhFxA?pwd=g9dw) (access code: g9dw).
+[Google Drive](https://drive.google.com/drive/folders/17gzfSKySkQd4iUjMZfk5zuEfm12T3U6Y?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1LaTGD-x66-QvZ9WE0QhFxA?pwd=g9dw) (access code: g9dw).
 
 
 ## Contact
