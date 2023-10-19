@@ -1,32 +1,29 @@
-# X-Restormer [[Paper Link]](https://arxiv.org/abs/2205.04437) [![Replicate](https://replicate.com/cjwbw/hat/badge)](https://replicate.com/cjwbw/hat)
+# X-Restormer [[Paper Link]](https://arxiv.org/abs/2310.11881) 
 
 ### A Comparative Study of Image Restoration Networks for General Backbone Network Design
-[Xiangyu Chen*](https://chxy95.github.io/), [Zheyuan Li*](https://xinntao.github.io/), [Yuandong Pu*](https://andrew0613.github.io/), [Jiantao Zhou](https://www.fst.um.edu.mo/personal/jtzhou/), [Yu Qiao](https://mmlab.siat.ac.cn/yuqiao) and [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ&hl=zh-CN)
+[Xiangyu Chen*](https://chxy95.github.io/), [Zheyuan Li*](https://xiaom233.github.io/), [Yuandong Pu*](https://andrew0613.github.io/), [Jiantao Zhou](https://www.fst.um.edu.mo/personal/jtzhou/), [Yu Qiao](https://mmlab.siat.ac.cn/yuqiao) and [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ&hl=zh-CN)
 
 #### BibTeX
 
-    @InProceedings{chen2023hat,
-        author    = {Chen, Xiangyu and Wang, Xintao and Zhou, Jiantao and Qiao, Yu and Dong, Chao},
-        title     = {A Comparative Study of Image Restoration Networks for General Backbone Network Design},
-        booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-        month     = {June},
-        year      = {2023},
-        pages     = {22367-22377}
-    }
+    @misc{chen2023comparative,
+      title={A Comparative Study of Image Restoration Networks for General Backbone Network Design}, 
+      author={Xiangyu Chen and Zheyuan Li and Yuandong Pu and Yihao Liu and Jiantao Zhou and Yu Qiao and Chao Dong},
+      year={2023},
+      eprint={2310.11881},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 **Google Scholar has unknown bugs for indexing this paper recently, while it can still be cited by the above BibTeX.**
 
 ## Updates
-- **(To do)** 2022-05-09: Release the first version of the paper at Arxiv.
-- **(To do)** 2022-05-20: Release the codes, models and results of HAT.
-- **(To do)** Release the extended version of the paper.
-- **(To do)** Add the tile mode for Replicate demo.
-- **(To do)** Update the Replicate demo for Real-World SR.
-- **(To do)** Add HAT models for Multiple Image Restoration tasks.
+- 2023-10-18: Release the first version of the paper at Arxiv.
+- 2023-10-19: Release the codes, models and results.
+
 
 ## Overview
 <img src="figures/Structure.png" width="600"/>
-
-<div style="display: flex; justify-content: center;">
+<img src="figures/relative_performance.jpg" width="600"/>
+<!-- <div style="display: flex; justify-content: center;">
     <img src="figures/SR_Urban100.png" alt="图片1" style="width: 300px; margin: 10px;">
     <img src="figures/Denoising_McMaster.png" alt="图片2" style="width: 300px; margin: 10px;">
 </div>
@@ -36,7 +33,7 @@
 </div>
 <div style="display: flex; justify-content: center;">
     <img src="figures/Dehazing_SOTS.png" alt="图片2" style="width: 300px; margin: 10px;">
-</div>
+</div> -->
 <!-- <img src="figures/Dehazing_SOTS.png" width="600"/> -->
 
 **Benchmark results on SRx4 without x2 pretraining. FLOPs are calculated for a 64x64 input.**
@@ -89,12 +86,9 @@ python setup.py develop
 
 ## How To Test
 
-Without implementing the codes, [chaiNNer](https://github.com/chaiNNer-org/chaiNNer) is a nice tool to run our models.
-
-Otherwise,
 - Refer to `./options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.
 - The pretrained models are available at
-[Google Drive](https://drive.google.com/drive/folders/1HpmReFfoUqUbnAOQ7rvOeNU3uf_m69w0?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1u2r4Lc2_EEeQqra2-w85Xg) (access code: qyrl).
+[Google Drive](https://drive.google.com/drive/folders/1HpmReFfoUqUbnAOQ7rvOeNU3uf_m69w0?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1OvyRe6u08HXFQI8NACOhdg?pwd=im3q) (access code: im3q).
 - Then run the follwing codes (taking `HAT_SRx4_ImageNet-pretrain.pth` as an example):
 ```
 python hat/test.py -opt options/test/001_xrestormer_sr.yml
@@ -103,7 +97,6 @@ The testing results will be saved in the `./results` folder.
 
 - Refer to `./options/test/001_xrestormer_sr.yml` for **inference** without the ground truth image.
 
-**Note that the tile mode is also provided for limited GPU memory when testing. You can modify the specific settings of the tile mode in your custom testing option by referring to `./options/test/HAT_tile_example.yml`.**
 
 ## How To Train
 - Refer to `./options/train` for the configuration file of the model to train.
@@ -118,7 +111,7 @@ The training logs and weights will be saved in the `./experiments` folder.
 
 ## Results
 The inference results on benchmark datasets are available at
-[Google Drive](https://drive.google.com/drive/folders/1t2RdesqRVN7L6vCptneNRcpwZAo-Ub3L?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1CQtLpty-KyZuqcSznHT_Zw) (access code: 63p5).
+[Google Drive](https://drive.google.com/drive/folders/1t2RdesqRVN7L6vCptneNRcpwZAo-Ub3L?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1LaTGD-x66-QvZ9WE0QhFxA?pwd=g9dw) (access code: g9dw).
 
 
 ## Contact
