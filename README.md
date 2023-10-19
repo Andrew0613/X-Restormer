@@ -13,7 +13,6 @@
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-**Google Scholar has unknown bugs for indexing this paper recently, while it can still be cited by the above BibTeX.**
 
 ## Updates
 - 2023-10-18: Release the first version of the paper at Arxiv.
