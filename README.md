@@ -58,7 +58,7 @@ python setup.py develop
 - Refer to `./options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.
 - The pretrained models are available at
 [Google Drive](https://drive.google.com/drive/folders/16WxegSAN_sescgrfW4ZMO4b6TcR_7T24?usp=share_link) or [Baidu Netdisk](https://pan.baidu.com/s/1OvyRe6u08HXFQI8NACOhdg?pwd=im3q) (access code: im3q).
-- Then run the follwing codes (taking `sr_300k.pth` as an example):
+- Then run the following codes (taking `sr_300k.pth` as an example):
 ```
 python xrestormer/test.py -opt options/test/001_xrestormer_sr.yml
 ```
@@ -74,7 +74,7 @@ The testing results will be saved in the `./results` folder.
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1231 xrestormer/train.py -opt ./options/train/001_xrestormer_sr.yml --launcher pytorch
 ```
-- Note that the default batch size per gpu is 4, which will cost about 60G memory for each GPU.
+- Note that the default batch size per GPU is 4, which will cost about 60G memory for each GPU.
 
 The training logs and weights will be saved in the `./experiments` folder.
 
