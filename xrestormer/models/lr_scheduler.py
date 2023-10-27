@@ -67,7 +67,7 @@ class CosineAnnealingRestartLR(_LRScheduler):
 
     Args:
         optimizer (torch.nn.optimizer): Torch optimizer.
-        periods (list): Period for each cosine anneling cycle.
+        periods (list): Period for each cosine annealing cycle.
         restart_weights (list): Restart weights at each restart iteration.
             Default: [1].
         eta_min (float): The minimum lr. Default: 0.
@@ -105,7 +105,7 @@ class CosineAnnealingRestartCyclicLR(_LRScheduler):
     scheduler will restart with the weights in restart_weights.
     Args:
         optimizer (torch.nn.optimizer): Torch optimizer.
-        periods (list): Period for each cosine anneling cycle.
+        periods (list): Period for each cosine annealing cycle.
         restart_weights (list): Restart weights at each restart iteration.
             Default: [1].
         eta_min (float): The mimimum lr. Default: 0.
